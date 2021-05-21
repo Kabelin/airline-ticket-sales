@@ -1,0 +1,31 @@
+networks:
+  ats-network:
+    ipam:
+      config:
+        - subnet: 172.10.0.0/24
+
+services:
+  db:
+    image: postgres
+    container_name: ats-database-postgresSQL
+    environment:
+      POSTGRES_PASSWORD: banco123
+      POSTGRES_USER: airline-ticket-sales
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks:
+      ats-network:
+        ipv4_address: 172.10.0.6
+
+  web:
+    depends_on:
+      - db
+    build: .
+    container_name: ats-app-production
+    ports:
+      - "5000:5000"
+    networks:
+      ats-network:
+        ipv4_address: 172.10.0.5

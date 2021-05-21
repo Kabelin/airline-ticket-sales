@@ -1,0 +1,33 @@
+{
+  "name": "airline-ticket-sales",
+  "version": "1.0.0",
+  "description": "development environment for an airline ticket sales company",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "bundle": "npx sucrase ./src -d ./bundle --transforms imports"
+  },
+  "repository": "https://github.com/Kabelin/airline-ticket-sales.git",
+  "author": "Kabelin",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "umzug": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "sequelize-cli": "^6.2.0",
+    "sucrase": "^3.18.1"
+  }
+}
